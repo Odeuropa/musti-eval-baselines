@@ -1,0 +1,18 @@
+TASK13:
+  name: VisualEntailment
+  type: VL-tri-classifier
+  loss: BCEWithLogitLoss
+  process: normal
+  task_id: 13
+  lang: en
+  dataroot: ../data/
+  features_h5path1: ../data/image_data/features/lmdb
+  features_h5path2: ''
+  train_annotations_jsonpath: ''
+  val_annotations_jsonpath: ../data/test_files/musti-train-it.jsonl
+  max_seq_length: 56
+  max_region_num: 36
+  batch_size: 128
+  eval_batch_size: 1024
+  train_split: ''
+  val_split: test
