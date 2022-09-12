@@ -19,6 +19,7 @@ python download_images.py --no-split
 ```
 
 ## Feature Extraction
+To install Feature Extractor follow the steps in [here](https://github.com/kiymetakdemir/musti-eval-baselines/tree/main/volta/features_extraction#install-feature-extractor).
 
 ```bash
 conda activate py-bottomup
