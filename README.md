@@ -33,7 +33,7 @@ conda deactivate
 ```
 
 ## Models
-For those who have access to the Odeuropa Google Drive folder can find the models ViLBERT and mUNITER pretrained and finetuned (on SNLI-VE), under the folder [MUSTI-organization/baselines](https://drive.google.com/drive/folders/1TJNMwY3QbHMcrd71Ybh-9CK_SPHWyWPW?usp=sharing) or find links to download pretrained models from this [link](https://github.com/kiymetakdemir/musti-eval-baselines/blob/main/volta/MODELS.md). Place <em>baselines</em> folder that contains models under <em>musti-eval-baselines</em>.
+For those who have access to the Odeuropa Google Drive folder can find the models ViLBERT and mUNITER pretrained and finetuned (on SNLI-VE), under the folder [MUSTI-organization/baselines](https://drive.google.com/drive/folders/1TJNMwY3QbHMcrd71Ybh-9CK_SPHWyWPW?usp=sharing) or find links to download pretrained models from this [link](https://github.com/kiymetakdemir/musti-eval-baselines/blob/main/volta/MODELS.md). Place <em>baselines</em> folder that contains models under <em>musti-eval-baselines</em>. Model configuration files are stored in volta/config/.
 
 ## Evaluate data
 
