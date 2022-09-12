@@ -4,15 +4,19 @@ This repository relies on [volta](https://github.com/e-bug/volta). There are som
 
 ## Setup
 
-Follow the steps in Repository Setup in [volta](https://github.com/e-bug/volta#repository-setup) except cloning original volta repository use `git clone git@github.com:kiymetakdemir/musti-eval-baselines.git`.
+Follow the steps in Repository Setup in [volta](https://github.com/e-bug/volta#repository-setup). Except cloning original volta repository, use `git clone git@github.com:kiymetakdemir/musti-eval-baselines.git`.
 
 ## Test Data Preparation and Downloading Images
 
+To prepare test file on a specific language use:
 ```bash
-python download_images.py --split True --lang en --filepath musti_data/musti-train.json
+python download_images.py --split --lang en --filepath musti_data/musti-train.json
 ```
 
-To include all languages in test data set split parameter to False.
+To include all languages in test file, use:
+```bash
+python download_images.py --no-split
+```
 
 ## Feature Extraction
 
@@ -29,7 +33,7 @@ conda deactivate
 ```
 
 ## Models
-For those who have access to the Odeuropa Google Drive folder can find the models ViLBERT and mUNITER pretrained and finetuned (on SNLI-VE) under the folder [MUSTI-organization/baselines](https://drive.google.com/drive/folders/1TJNMwY3QbHMcrd71Ybh-9CK_SPHWyWPW?usp=sharing) or download pretrained models from this [link](https://github.com/e-bug/volta/blob/main/MODELS.md).
+For those who have access to the Odeuropa Google Drive folder can find the models ViLBERT and mUNITER pretrained and finetuned (on SNLI-VE), under the folder [MUSTI-organization/baselines](https://drive.google.com/drive/folders/1TJNMwY3QbHMcrd71Ybh-9CK_SPHWyWPW?usp=sharing) or download pretrained models from this [link](https://github.com/e-bug/volta/blob/main/MODELS.md). Place <em>baselines</em> folder that contains models under <em>musti-eval-baselines</em>.
 
 ## Evaluate data
 
