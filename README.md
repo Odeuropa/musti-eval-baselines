@@ -12,7 +12,7 @@ Follow the steps in Repository Setup in [volta](https://github.com/e-bug/volta#r
 python download_images.py --split True --lang en --filepath musti_data/musti-train.json
 ```
 
-To include all languages in test data set split parameter to False.
+To include all languages in test data, set split parameter to False.
 
 ## Feature Extraction
 
