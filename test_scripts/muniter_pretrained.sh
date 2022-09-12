@@ -4,7 +4,7 @@ TASK=13
 MODEL=muniter
 MODEL_CONFIG=ctrl_muniter_base
 TASKS_CONFIG=config_test_task
-PRETRAINED=../models/muniter_pretrained.bin
+PRETRAINED=../baselines/muniter_pretrained.bin
 OUTPUT_DIR=../musti/results/muniter/pretrained
 
 activate volta

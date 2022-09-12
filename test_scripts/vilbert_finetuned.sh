@@ -4,7 +4,7 @@ TASK=13
 MODEL=vilbert
 MODEL_CONFIG=vilbert_base
 TASKS_CONFIG=config_test_task
-PRETRAINED=../models/vilbert_finetuned.bin
+PRETRAINED=../baselines/vilbert_finetuned.bin
 OUTPUT_DIR=../results/vilbert/finetuned
 
 activate volta
