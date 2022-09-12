@@ -4,7 +4,7 @@ This repository relies on [volta](https://github.com/e-bug/volta). There are som
 
 ## Setup
 
-Follow the steps in Repository Setup in [volta](https://github.com/e-bug/volta#repository-setup) except cloning original volta repository use `git clone git@github.com:kiymetakdemir/musti-eval-baselines.git`.
+Follow the steps in Repository Setup in [volta](https://github.com/e-bug/volta#repository-setup). Except cloning original volta repository, use `git clone git@github.com:kiymetakdemir/musti-eval-baselines.git`.
 
 ## Test Data Preparation and Downloading Images
 
