@@ -7,8 +7,10 @@ dataroot = "data/"
 def parse_args():
 	parser = argparse.ArgumentParser()
 	parser.add_argument("--lang", default='en', type=str)
-	parser.add_argument("--split", type=bool)
-	parser.add_argument("--filepath", default=dataroot+'musti_data/musti-train.json', type=str)
+	parser.add_argument('--split', action='store_true')
+	parser.add_argument('--no-split', dest='split', action='store_false')
+	parser.set_defaults(split=True)
+	parser.add_argument("--filepath", default='data/musti_data/musti-train.json', type=str)
 	return parser.parse_args()
 
 def main():
@@ -51,7 +53,7 @@ def main():
 				f.write('\n')
 	else:
 		with open(dataroot+"test_files/{}.jsonl".format(args.filepath.split('/')[-1].split('.')[0]), 'w', encoding='utf-8') as f:
-                        print("File saved to {}test_files/{}.jsonl".format(dataroot,args.file_path.split('/')[-1].split('.')[0]))
+                        print("File saved to {}test_files/{}.jsonl".format(dataroot,args.filepath.split('/')[-1].split('.')[0]))
                         for d in data:
                                 json.dump(d, f, ensure_ascii=False)
                                 f.write('\n')
