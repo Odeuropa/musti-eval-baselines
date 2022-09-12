@@ -1,7 +1,8 @@
 # datasets
 volta/datasets/
-
+data/image_data
 .cache
+cache
 
 # pyenv
 .python-version
