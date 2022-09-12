@@ -23,10 +23,10 @@ python download_images.py --no-split
 ```bash
 conda activate py-bottomup
 
-cd /musti-eval-baselines/volta/features_extraction/datasets/flickr30k
+cd volta/features_extraction/datasets/flickr30k
 python flickr30k_boxes36_h5-proposal.py --root /musti-eval-baselines/data/image_data/images --outdir /musti-eval-baselines/data/image_data/features
 
-cd /musti-eval-baselines/volta/features_extraction
+cd ../..
 python h5_to_lmdb.py --h5 /musti-eval-baselines/data/image_data/features/musti_boxes36.h5 --lmdb /musti-eval-baselines/data/image_data/features/lmdb
 
 conda deactivate
@@ -42,10 +42,10 @@ Make sure that [config_test_task.yml](https://github.com/kiymetakdemir/musti-eva
 ```bash
 conda activate volta
 
-cd /musti-eval-baselines/test_scripts
+cd test_scripts
 bash test_vilbert_finetuned.sh
 
-cd /musti-eval-baselines
+cd ..
 python eval_result.py --test_file data/test_files/musti-train-en.jsonl --logit_file results/vilbert/pretrained/musti-train-en-logits.txt
 
 conda deactivate
