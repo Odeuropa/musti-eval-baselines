@@ -8,11 +8,15 @@ Follow the steps in Repository Setup in [volta](https://github.com/e-bug/volta#r
 
 ## Test Data Preparation and Downloading Images
 
+To prepare test file on a specific language use:
 ```bash
-python download_images.py --split True --lang en --filepath musti_data/musti-train.json
+python download_images.py --split --lang en --filepath musti_data/musti-train.json
 ```
 
-To include all languages in test data, set split parameter to False.
+To include all languages in test file, use:
+```bash
+python download_images.py --no-split
+```
 
 ## Feature Extraction
 
