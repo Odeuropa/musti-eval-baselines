@@ -1,6 +1,6 @@
 # datasets
 volta/datasets/
-data/image_data
+data/
 .cache
 cache
 
