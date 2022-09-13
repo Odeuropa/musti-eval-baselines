@@ -28,13 +28,14 @@ if __name__ == '__main__':
 
 	y_true = [1 if LABEL_MAP[d]==2 else 0 for d in df['gold_label']]    #entailment: 1; contradiction,neutral: 0
 	y_pred = [1 if probs.argmax()==2 else 0 for probs in probs_list]
-	print('y_true len:', len(y_true))
-	print('y_pred len:', len(y_pred))
+	y_dummy = [0 for d in df['gold_label']]
+		
+	print("dummy (all negative) accuracy: {}".format(accuracy_score(y_true, y_dummy)))
 	print()
 	
 	print(confusion_matrix(y_true, y_pred))
 	print()
-
+		
 	print("accuracy: {:.4f}".format(accuracy_score(y_true, y_pred)))
 	print("precision: {:.4f}".format(precision_score(y_true, y_pred)))
 	print("recall: {:.4f}".format(recall_score(y_true, y_pred)))
