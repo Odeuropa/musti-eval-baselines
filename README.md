@@ -10,7 +10,7 @@ Follow the steps in Repository Setup in [volta](https://github.com/Odeuropa/must
 
 To prepare test file on a specific language use:
 ```bash
-python download_images.py --split --lang en --filepath musti_data/musti-train.json
+python download_images.py --split --lang en --filepath data/musti_data/musti-train.json
 ```
 
 To include all languages in test file, use:
