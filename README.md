@@ -52,6 +52,63 @@ python eval_result.py --test_file data/test_files/musti-train-en.jsonl --logit_f
 conda deactivate
 ```
 
+## Data
+
+| | Positive number of pairs | Total number of pairs |
+| ------------- | ------------- | ------------- |
+| English | 201 (25.12%) | 800 |
+| Italian | 202 (25.12%) | 804 |
+| French | 103 (33.88%) | 304 |
+| German | 95 (19.71) | 482 |
+
+Table 1: Number and proportion of Musti training data for each language
+
+## Results
+
+Majority of data in each language is the negative class. Therefore we present the dummy baseline results where the baseline classifies all pairs as negative. 
+
+| | ViLBERT pretrained | ViLBERT finetuned | mUNITER pretrained | mUNITER finetuned | dummy baseline | 
+| :---  | :---:  | :---:  | :---:  | :---:  | :---:  |
+| accuracy | 0.67 | 0.74 | 0.73 | 0.75 | 0.75 |
+| precision | 0.19 | 0.37 | 0.00 | 0.47 | 0.00 |
+| recall | 0.10 | 0.07 | 0.00 | 0.04 | 0.00 |
+| f1 | 0.14 | 0.12 | 0.00 | 0.08 | 0.00 |
+
+Table 2: ViLBERT and mUNITER results on English data
+
+---
+
+| | mUNITER pretrained | mUNITER finetuned | dummy baseline | 
+| :--- | :---:  | :---:  | :---:  |
+| accuracy | 0.73 | 0.75 | 0.75 |
+| precision | 0.20 | 0.50 | 0.00 |
+| recall | 0.02 | 0.06 | 0.00 |
+| f1 | 0.04 | 0.11 | 0.00 |
+
+Table 3: mUNITER results on Italian data
+
+---
+
+| | mUNITER pretrained | mUNITER finetuned | dummy baseline | 
+| :---  | :---:  | :---:  | :---:  |
+| accuracy | 0.65 | 0.65 | 0.66 |
+| precision | 0.00 | 0.43 | 0.00 |
+| recall | 0.00 | 0.06 | 0.00 |
+| f1 | 0.00 | 0.10 | 0.00 |
+
+Table 4: mUNITER results on French data
+
+---
+
+| | mUNITER pretrained | mUNITER finetuned | dummy baseline | 
+| :---  | :---:  | :---:  | :---:  |
+| accuracy | 0.80 | 0.77 | 0.80 |
+| precision | 0.50 | 0.25 | 0.00 |
+| recall | 0.01 | 0.08 | 0.00 |
+| f1 | 0.02 | 0.13 | 0.00 |
+
+Table 5: mUNITER results on German data
+
 
 
 
