@@ -1,6 +1,6 @@
 # musti-eval-baselines
 
-This repository relies on [volta](https://github.com/e-bug/volta). There are some additional scripts and modifications to run specific models on [Musti data] (https://multimediaeval.github.io/editions/2022/tasks/musti/).
+This repository relies on [volta](https://github.com/e-bug/volta). There are some additional scripts and modifications to run specific models on [Musti data](https://multimediaeval.github.io/editions/2022/tasks/musti/).
 
 ## Setup
 
