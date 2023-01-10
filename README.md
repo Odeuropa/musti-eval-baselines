@@ -89,5 +89,5 @@ Best performing multilingual model on English Shao et al. added for reference.
 
 
 ## Acknowledgement
-This code is modified from [volta](https://github.com/e-bug/volta) which in turn relies on [vilbert-multi-task](https://github.com/facebookresearch/vilbert-multi-task) and other repositories.
+This code is modified from [volta](https://github.com/e-bug/volta) which in turn relies on [vilbert-multi-task](https://github.com/facebookresearch/vilbert-multi-task) and [other repositories](https://github.com/e-bug/volta#acknowledgement).
 
