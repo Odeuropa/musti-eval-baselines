@@ -1,7 +1,5 @@
 # musti-eval-baselines
 
-This repository relies on [volta](https://github.com/e-bug/volta). There are some additional scripts and modifications to run specific models on [Musti](https://multimediaeval.github.io/editions/2022/tasks/musti/) data.
-
 ## Setup
 
 Follow the steps in Repository Setup in [volta](https://github.com/Odeuropa/musti-eval-baselines/tree/main/volta#repository-setup). Except cloning original volta repository, use `git clone git@github.com:Odeuropa/musti-eval-baselines.git`.
@@ -34,7 +32,7 @@ conda deactivate
 ```
 
 ## Models
-For those who have access to the Odeuropa Google Drive folder can find the models ViLBERT and mUNITER pretrained and finetuned (on SNLI-VE), under the folder [MUSTI-organization/baselines](https://drive.google.com/drive/folders/1TJNMwY3QbHMcrd71Ybh-9CK_SPHWyWPW?usp=sharing) or find links to download pretrained models from this [link](https://github.com/Odeuropa/musti-eval-baselines/blob/main/volta/MODELS.md). Place <em>baselines</em> folder that contains models under <em>musti-eval-baselines</em>. Model configuration files are stored in volta/config/.
+Find links to download pretrained models from this [link](https://github.com/Odeuropa/musti-eval-baselines/blob/main/volta/MODELS.md). Place <em>baselines</em> folder that contains models under <em>musti-eval-baselines</em> folder. Model configuration files are stored in volta/config/.
 
 ## Evaluate data
 
@@ -54,65 +52,42 @@ conda deactivate
 
 ## Data
 
-| | Positive number of pairs | Total number of pairs |
-| ------------- | ------------- | ------------- |
-| English | 201 (25.12%) | 800 |
-| Italian | 202 (25.12%) | 804 |
-| French | 103 (33.88%) | 304 |
-| German | 95 (19.71) | 482 |
+| | Positive pairs (Train) | Total pairs (Train) | Positive pairs (Test) | Total pairs (Test) |
+| :---  | :---:  | :---:  | :---:  | :---:  |
+| English  | 198 (24.90%) | 795 | - | 200 |
+| German | 95 (19.79%) | 480 | - | 213 |
+| French | 102 (34.00%) | 300 | - | 200  |
+| Italian | 198 (24.78%) | 799 | - | 201 |
 
-Table 1: Number and proportion of Musti training data for each language
+Table 1: MUSTI train and test set data statistics. The class distribution of the test data is kept confidential.
 
 ## Results
 
-Majority of data in each language is the negative class. Therefore we present the dummy baseline results where the baseline classifies all pairs as negative. 
+Majority of data in each language is the negative class. Therefore we present the dummy baseline results where the baseline classifies all pairs as negative. The Overall score is the F1-macro on all predictions on all test data.
 
-| | ViLBERT pretrained | ViLBERT finetuned | mUNITER pretrained | mUNITER finetuned | dummy baseline | 
+| | English | German | French | Italian | Overall | 
 | :---  | :---:  | :---:  | :---:  | :---:  | :---:  |
-| accuracy | 0.67 | 0.74 | 0.73 | 0.75 | 0.75 |
-| precision | 0.19 | 0.37 | 0.00 | 0.47 | 0.00 |
-| recall | 0.10 | 0.07 | 0.00 | 0.04 | 0.00 |
-| f1 | 0.14 | 0.12 | 0.00 | 0.08 | 0.00 |
+| dummy-baseline |  .4285 | .4289 | .3333 | .4273 | .4075 |
+| mUNITER | .4269 | .4289 | .3551 | .4398 | .4177 |
+| mUNITER-SNLI | .4474 | .4644 | .3605 | .5020 | .4473 |
+| mUNITER-MUSTI | .6965 | .4579 | .5022 | .6535 | .6011 |
+| mUNITER-SNLI-MUSTI | .7482 | **.5014** | **.5053** | .6850 | **.6176** |
+| Shao et al. | .7867 | .4568 | .3743 | **.7501** | .6033 |
+| ViLBERT-SNLI-MUSTI | **.8024** | - | - | - | - |
 
-Table 2: ViLBERT and mUNITER results on English data
-
----
-
-| | mUNITER pretrained | mUNITER finetuned | dummy baseline | 
-| :--- | :---:  | :---:  | :---:  |
-| accuracy | 0.73 | 0.75 | 0.75 |
-| precision | 0.20 | 0.50 | 0.00 |
-| recall | 0.02 | 0.06 | 0.00 |
-| f1 | 0.04 | 0.11 | 0.00 |
-
-Table 3: mUNITER results on Italian data
+Table 2: Multilingual models and ViLBERT-SNLI-MUSTI results on the MUSTI test set, given as F1-macro score.
+Best performing monolingual model Vilbert-SNLI-MUSTI added for reference.
 
 ---
 
-| | mUNITER pretrained | mUNITER finetuned | dummy baseline | 
-| :---  | :---:  | :---:  | :---:  |
-| accuracy | 0.65 | 0.65 | 0.66 |
-| precision | 0.00 | 0.43 | 0.00 |
-| recall | 0.00 | 0.06 | 0.00 |
-| f1 | 0.00 | 0.10 | 0.00 |
+| ViLBERT | ViLBERT-SNLI | ViLBERT-MUSTI | ViLBERT-SNLI-MUSTI | Shao et al. (multilingual) | 
+| :---:  | :---:  | :---:  | :---:  | :---:  |
+| .4609 | .4373 | .7834 | **.8024** | .7867 |
 
-Table 4: mUNITER results on French data
-
----
-
-| | mUNITER pretrained | mUNITER finetuned | dummy baseline | 
-| :---  | :---:  | :---:  | :---:  |
-| accuracy | 0.80 | 0.77 | 0.80 |
-| precision | 0.50 | 0.25 | 0.00 |
-| recall | 0.01 | 0.08 | 0.00 |
-| f1 | 0.02 | 0.13 | 0.00 |
-
-Table 5: mUNITER results on German data
+Table 3: ViLBERT results on the MUSTI English test set, given as F1-macro score.
+Best performing multilingual model on English Shao et al. added for reference.
 
 
-
-
-
-
-
+## Acknowledgement
+This code is modified from [volta](https://github.com/e-bug/volta) which in turn relies on [vilbert-multi-task](https://github.com/facebookresearch/vilbert-multi-task) and other repositories.
 
